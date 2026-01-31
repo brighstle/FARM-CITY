@@ -188,11 +188,11 @@ class FarmCity:
         print(f"Total Crops: {len(self.data['crops'])}")
         
         if self.data['animals']:
-            total_animal_count = sum(int(a.get('count', 0)) for a in self.data['animals'] if a.get('count', '0').isdigit())
+            total_animal_count = sum(int(a.get('count', '0')) for a in self.data['animals'] if a.get('count', '0').isdigit())
             print(f"Total Animal Count: {total_animal_count}")
         
         if self.data['crops']:
-            total_crop_area = sum(float(c.get('area', 0)) for c in self.data['crops'] if c.get('area', '0').replace('.', '', 1).isdigit())
+            total_crop_area = sum(float(c.get('area', '0')) for c in self.data['crops'] if c.get('area', '0').replace('.', '', 1).isdigit())
             print(f"Total Crop Area: {total_crop_area} acres")
     
     def display_menu(self):
